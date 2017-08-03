@@ -1,12 +1,5 @@
 *** Settings ***
-
 Resource    ../../../resources/robotframework/res/resources.robot
-
-
-*** Variables ***
-
-
-
 
 
 *** Test Cases ***

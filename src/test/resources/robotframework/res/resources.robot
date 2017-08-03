@@ -16,10 +16,5 @@ ${given_city}    Set during test
 
 
 
-*** Keywords ***
-    
-## To open browser using custom webdriver (behind proxy in this case)
-Open browser using webdriver
-	${proxy} 	Evaluate 	sys.modules['selenium.webdriver'].Proxy() 	sys, selenium.webdriver
-	${proxy.http_proxy} 	Set Variable 	${my_proxy}	
-	Create Webdriver 	${browser}    proxy=${proxy}
+#*** Keywords ***
+
