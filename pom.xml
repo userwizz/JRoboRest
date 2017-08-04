@@ -14,7 +14,7 @@
 		<robotframework.version>3.0.2</robotframework.version>
 		<robotframework.maven.plugin.version>1.4.7</robotframework.maven.plugin.version>
 		<robotframework.httprequestlibrary.version>0.0.6</robotframework.httprequestlibrary.version>
-		<junit.version>4.12</junit.version>
+		<build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
   	</properties>
 
 	<dependencies>
@@ -23,12 +23,6 @@
 	    <artifactId>robotframework</artifactId>
 	    <version>${robotframework.version}</version>
 	</dependency>
-  	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>${junit.version}</version>
-		<scope>test</scope>
-    </dependency>
     <dependency>
 	    <groupId>com.github.hi-fi</groupId>
 	    <artifactId>robotframework-httprequestlibrary</artifactId>
@@ -37,16 +31,31 @@
 	</dependencies>
 
 	<build>
-	<plugins>      
+		<plugins>
+		     <!-- Compile also Java variable file under res folder (ToDo: check is the a smarter way to achieve this..) -->
+		     <plugin>
+		       <groupId>org.codehaus.mojo</groupId>
+		       <artifactId>build-helper-maven-plugin</artifactId>
+		       <version>${build.helper.maven.plugin.version}</version>
+		       <executions>
+		         <execution>
+		           <id>compile-variables</id>
+		           <phase>generate-sources</phase>
+		           <goals>
+		             <goal>add-source</goal>
+		           </goals>
+		           <configuration>
+		             <sources>
+		               <source>src/test/robotframework/acceptance/res/</source>
+		             </sources>
+		           </configuration>
+		         </execution>
+		       </executions>
+		</plugin>
 		<plugin>
 	        <groupId>org.robotframework</groupId>
 	        <artifactId>robotframework-maven-plugin</artifactId>
 	        <version>${robotframework.maven.plugin.version}</version>
-			<!-- configuration>
-      			<extraPathDirectories>
-        			<extraPathDirectory>your/path/here</extraPathDirectory>
-      		</extraPathDirectories>
-    		</configuration-->
 	        <executions>
 			<execution>
 			<goals>
