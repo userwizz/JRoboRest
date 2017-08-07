@@ -5,7 +5,7 @@ Resource    ${ROOTDIR}/res/resources.robot
 
 *** Test Cases ***
 Response code using valid user
-    Create Session    ${ALIAS}    ${BASE_URL_GITHUB}    verify=${VERIFY_SSL}    proxy=${PROXY}
+    Create Session    ${ALIAS}    ${BASE_URL_GITHUB}    verify=${VERIFY_SSL}    proxy=${PROXY_AS_DICT}
     ${response}    Get Request    ${ALIAS}    ${VALID_USER}   
     Should Be Equal As Strings    ${response.status_code}    200
     

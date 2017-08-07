@@ -1,6 +1,7 @@
 *** Settings ***
 Library    HttpRequestLibrary
 Library    Collections
+Library    Selenium2Library  
 Library    com.mydomain.robot.jrobot.JavaLib
 Variables    JavaVariables.java
 

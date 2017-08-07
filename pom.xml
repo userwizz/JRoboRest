@@ -14,6 +14,7 @@
 		<robotframework.version>3.0.2</robotframework.version>
 		<robotframework.maven.plugin.version>1.4.7</robotframework.maven.plugin.version>
 		<robotframework.httprequestlibrary.version>0.0.6</robotframework.httprequestlibrary.version>
+		<robotframework.selenium2library.version>1.4.0.8</robotframework.selenium2library.version>
 		<build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
   	</properties>
 
@@ -27,6 +28,11 @@
 	    <groupId>com.github.hi-fi</groupId>
 	    <artifactId>robotframework-httprequestlibrary</artifactId>
 	    <version>${robotframework.httprequestlibrary.version}</version>
+	</dependency>
+	<dependency>
+    	<groupId>com.github.markusbernhardt</groupId>
+    	<artifactId>robotframework-selenium2library-java</artifactId>
+    	<version>${robotframework.selenium2library.version}</version>
 	</dependency>
 	</dependencies>
 
